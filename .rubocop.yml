@@ -1,1 +1,42 @@
 inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 3.1.2
+  TargetRailsVersion: 7.0.3.1
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/*
+    - node_modules/**/*
+    - tmp/**/*
+    - vendor/**/*
+
+# Allow Japanese comments
+Style/AsciiComments:
+  Enabled: false
+
+# No comment required for class
+Style/Documentation:
+  Enabled: false
+
+# Stop unifying single quotation marks
+Style/StringLiterals:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 50
+
+# http://wiki.c2.com/?AbcMetric
+Metrics/AbcSize:
+  Max: 40
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Metrics/CyclomaticComplexity:
+  Max: 10

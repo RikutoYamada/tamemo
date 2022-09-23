@@ -40,3 +40,7 @@ Metrics/PerceivedComplexity:
 
 Metrics/CyclomaticComplexity:
   Max: 10
+
+# Allow ParentClass::ChildClass format
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact

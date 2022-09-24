@@ -3,22 +3,20 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
-  # rubocop:disable Lint/UselessMethodDefinition
   # GET /resource/sign_in
-  def new
-    super
-  end
+  # def new
+  #   super
+  # end
 
   # POST /resource/sign_in
-  def create
-    super
-  end
+  # def create
+  #   super
+  # end
 
   # DELETE /resource/sign_out
-  def destroy
-    super
-  end
-  # rubocop:enable Lint/UselessMethodDefinition
+  # def destroy
+  #   super
+  # end
 
   # protected
 

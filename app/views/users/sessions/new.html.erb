@@ -1,24 +1,19 @@
 <div class="container bg-gray-100 rounded mx-auto mt-5">
   <h2 class="text-4xl text-center">ログイン</h2>
-  <%# TODO code analysis needed %>
-  <%= form_with model: @user, url: session_path(resource_name), local: true do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+  <%= form_with model: @user, url: session_path(resource_name), local: true do |form| %>
+    <%= form.label :email %>
+    <%= form.email_field :email, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <%= form.label :password %>
+    <%= form.password_field :password, autocomplete: "current-password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <div class="flex justify-between mt-3 items-center">
+      <div class="flex items-center">
+        <% if devise_mapping.rememberable? %>
+          <%= form.check_box :remember_me %>
+          <%= form.label :remember_me %>
+        <% end %>
       </div>
-    <% end %>
-    <div class="actions">
-      <%= f.submit "Log in" %>
+      <%= form.submit "ログイン", class: "bg-green-500 rounded-full text-teal-200 hover:text-white p-2 mr-0 mr-0" %>
     </div>
   <% end %>
+  <%= render "users/shared/links" %>
 </div>
-<%= render "users/shared/links" %>

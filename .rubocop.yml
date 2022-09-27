@@ -44,3 +44,6 @@ Metrics/CyclomaticComplexity:
 # Allow ParentClass::ChildClass format
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
+    
+RSpec/ExampleLength:
+  Max: 8

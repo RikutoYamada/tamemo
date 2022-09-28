@@ -47,3 +47,6 @@ Style/ClassAndModuleChildren:
     
 RSpec/ExampleLength:
   Max: 8
+    
+RSpec/FilePath:
+  Enabled: false

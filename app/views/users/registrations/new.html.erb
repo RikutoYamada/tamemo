@@ -2,8 +2,11 @@
   <h2 class="text-4xl text-center">新規登録</h2>
   <%= form_with model: @user, url: registration_path(resource_name), local: true do |form| %>
     <%= render "users/shared/error_messages", resource: resource %>
+    <label for="user_name">ユーザー名</label>
+    <%= form.text_field :name, autofocus: true, autocomplete: "name", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+
     <%= form.label :email %>
-    <%= form.email_field :email, autofocus: true, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <%= form.email_field :email, autocomplete: "email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
     <div class="flex">
       <%= form.label :password %>
       <% if @minimum_password_length %>

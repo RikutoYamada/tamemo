@@ -18,27 +18,29 @@ require "action_view/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-class Tamemo::Application < Rails::Application
-  # Initialize configuration defaults for originally generated Rails version.
-  config.load_defaults 7.0
+module Tamemo
+  class Application < Rails::Application
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 7.0
 
-  # Configuration for the application, engines, and railties goes here.
-  #
-  # These settings can be overridden in specific environments using the files
-  # in config/environments, which are processed later.
-  #
-  # config.eager_load_paths << Rails.root.join("extras")
+    # Configuration for the application, engines, and railties goes here.
+    #
+    # These settings can be overridden in specific environments using the files
+    # in config/environments, which are processed later.
+    #
+    # config.eager_load_paths << Rails.root.join("extras")
 
-  config.generators do |g|
-    g.test_framework :rspec,
-                     fixtures: false,
-                     view_specs: false,
-                     helper_specs: false,
-                     routing_specs: false
+    config.generators do |g|
+      g.test_framework :rspec,
+                       fixtures: false,
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false
+    end
+    # Don't generate system test files.
+    config.generators.system_tests = nil
+
+    # Japanese language support
+    config.i18n.default_locale = :ja
   end
-  # Don't generate system test files.
-  config.generators.system_tests = nil
-
-  # Japanese language support
-  config.i18n.default_locale = :ja
 end

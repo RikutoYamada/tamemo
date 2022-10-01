@@ -50,3 +50,6 @@ RSpec/ExampleLength:
     
 RSpec/FilePath:
   Enabled: false
+    
+RSpec/NotToNot:
+  EnforcedStyle: to_not

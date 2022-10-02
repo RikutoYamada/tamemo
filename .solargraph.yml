@@ -1,0 +1,19 @@
+include:
+  - "app/**/*.rb"
+  - "config/**/*.rb"
+
+# Support for Ruby on Rails
+require: 
+  - actioncable
+  - actionmailer
+  - actionpack
+  - actionview
+  - activejob
+  - activemodel
+  - activerecord
+  - activestorage
+  - activesupport
+    
+# setting fot linter
+reporters:
+- rubocop

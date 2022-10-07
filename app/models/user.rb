@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :expense_categories, dependent: :destroy
+  has_many :expenses, dependent: :destroy
 end

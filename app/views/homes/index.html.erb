@@ -10,4 +10,4 @@
     </div>
   <% end %>
 <% end %>
-<%= button_to "支出登録", "/categories", method: :get %>
+<%= link_to "支出登録", categories_path(is_super: true), method: :get %>

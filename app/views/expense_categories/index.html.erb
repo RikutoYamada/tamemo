@@ -1,5 +1,5 @@
 <% if @user %>
-  <% User.first.expense_categories.each do |e| %>
+  <% @categories.each do |e| %>
     <h1><%= e.name %></h1>
   <% end %>
 <% end %>

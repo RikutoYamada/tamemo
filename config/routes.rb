@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get '/categories', to: 'expense_categories#index'
-  get '/add_expense', to: 'expenses#new'
+  post '/expenses', to: 'expenses#create'
+  get '/expenses', to: 'expenses#new'
   # Defines the root path route ("/")
   # root "articles#index"
 end

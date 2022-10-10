@@ -5,6 +5,7 @@
     <div class="flex">
       <h1><%= ExpenseCategory.find(e.category_id).parent.name %>,</h1>
       <h1><%= ExpenseCategory.find(e.category_id).name %>,</h1>
+      <h1><%= e.store %>,</h1>
       <h1><%= e.amount %>円,</h1>
       <h1><%= e.expended_at %></h1>
     </div>

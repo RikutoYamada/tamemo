@@ -1,7 +1,7 @@
 <% if @user %>
   <% @categories.each do |e| %>
     <% if params[:category_id] %>
-      <%= link_to e.name, add_expense_path(category_id: e.id), method: :get %>
+      <%= link_to e.name, expenses_path(category_id: e.id), method: :get %>
     <% else %>
       <%= link_to e.name, categories_path(category_id: e.id), method: :get %>
     <% end %>

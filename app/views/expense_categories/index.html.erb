@@ -1,9 +1,20 @@
 <% if @user %>
-  <% @categories.each do |e| %>
-    <% if params[:category_id] %>
-      <%= link_to e.name, expenses_path(category_id: e.id), method: :get %>
-    <% else %>
-      <%= link_to e.name, categories_path(category_id: e.id), method: :get %>
-    <% end %>
+  <div class="container mx-auto">
+    <div class="flex justify-center text-2xl mt-10">
+      <% if params[:category_id] %>
+        <h1>中項目を選択してください</h1>
+      <% else %>
+        <h1>大項目を選択してください</h1>
+      <% end %>
+    </div>
+    <div class="flex justify-between w-80 mx-auto mt-3">
+      <% @categories.each do |e| %>
+        <% if params[:category_id] %>
+          <%= link_to e.name, expenses_path(category_id: e.id), method: :get, class: "bg-green-500 rounded-full text-teal-200 hover:text-white p-2" %>
+        <% else %>
+          <%= link_to e.name, categories_path(category_id: e.id), method: :get, class: "bg-green-500 rounded-full text-teal-200 hover:text-white p-2"%>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+</div>

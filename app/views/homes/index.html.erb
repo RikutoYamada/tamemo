@@ -1,14 +1,31 @@
 <%= render 'shared/flash_messages' %>
 <% if current_user %>
   <% user = current_user %>
-  <% user.expenses.each do |e| %>
-    <div class="flex">
-      <h1><%= ExpenseCategory.find(e.category_id).parent.name %>,</h1>
-      <h1><%= ExpenseCategory.find(e.category_id).name %>,</h1>
-      <h1><%= e.store %>,</h1>
-      <h1><%= e.amount %>円,</h1>
-      <h1><%= e.expended_at %></h1>
-    </div>
-  <% end %>
+  <div class="overflow-x-auto relative shadow-md sm:rounded-lg container mx-auto mt-10">
+    <table class="table-fixed w-full text-left">
+      <tdead>
+        <tr class="bg-gray-200">
+          <th>大項目</th>
+          <th>中項目</th>
+          <th>お店</th>
+          <th>支出額</th>
+          <th>支出日</th>
+        </tr>
+      </tdead>
+      <tbody>
+        <% user.expenses.each do |e| %>
+          <tr>
+            <td><%= ExpenseCategory.find(e.category_id).parent.name %></td>
+            <td><%= ExpenseCategory.find(e.category_id).name %></td>
+            <td><%= e.store %></td>
+            <td><%= e.amount %>円</td>
+            <td><%= e.expended_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex justify-end container mx-auto mt-3">
+    <%= link_to "支出登録", categories_path, method: :get, class: "bg-green-500 rounded-full text-teal-200 hover:text-white p-2 mr-3" %>
+  </div>
 <% end %>
-<%= link_to "支出登録", categories_path, method: :get %>

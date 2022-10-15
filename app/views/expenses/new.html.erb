@@ -1,9 +1,15 @@
 <%= form_with model: @expense, url:expenses_path(category_id: params[:category_id]), local: true do |form| %>
-  <h1>支出額</h1>
-  <%= form.number_field :amount, autofocus: true %>
-  <h1>お店</h1>
-  <%= form.text_field :store %>
-  <h1>日付</h1>
-  <%= form.date_select :expended_at %>
-  <%= form.submit "支出登録", class: "bg-green-500 rounded-full text-teal-200 hover:text-white p-2 mr-3" %>
+  <div class="mt-10 container mx-auto">
+    <h1>支出額</h1>
+    <%= form.number_field :amount, autofocus: true, class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <h1>お店</h1>
+    <%= form.text_field :store, class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" %>
+    <h1>日付</h1>
+    <div class="flex justify-between">
+      <div>
+        <%= form.date_select :expended_at %>
+      </div>
+      <%= form.submit "支出登録", class: "bg-green-500 rounded-full text-teal-200 hover:text-white p-2 mr-3" %>
+    </div>
+  </div>
 <% end %>
